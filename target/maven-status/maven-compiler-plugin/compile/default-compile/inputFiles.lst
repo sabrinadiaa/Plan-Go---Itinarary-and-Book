@@ -4,6 +4,7 @@ C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\pla
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\controller\BookingController.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\controller\CustomerPageController.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\controller\DestinationController.java
+C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\controller\EmergencyController.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\controller\ExploreController.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\controller\HomeController.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\controller\ItineraryController.java
@@ -21,7 +22,7 @@ C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\pla
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\entity\Booking.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\entity\Category.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\entity\Destination.java
-C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\entity\EmergencyContact.java
+C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\entity\EmergencyReport.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\entity\Itinerary.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\entity\ItineraryItem.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\entity\Notification.java
@@ -33,7 +34,7 @@ C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\pla
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\repository\BookingRepository.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\repository\CategoryRepository.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\repository\DestinationRepository.java
-C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\repository\EmergencyContactRepository.java
+C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\repository\EmergencyReportRepository.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\repository\ItineraryItemRepository.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\repository\ItineraryRepository.java
 C:\COOLYEAH\SEM 4\PEMROGRAMAN ORIENTASI OBJEK\TubesPlanNGo\src\main\java\com\plango\repository\NotificationRepository.java

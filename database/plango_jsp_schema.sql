@@ -7,7 +7,6 @@ CREATE TABLE users (
     username VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
-    saldo DOUBLE DEFAULT 0,
     role VARCHAR(20) NOT NULL DEFAULT 'CUSTOMER'
 );
 
@@ -81,9 +80,9 @@ CREATE TABLE review (
     CONSTRAINT fk_review_destination FOREIGN KEY (destination_id) REFERENCES destination(id)
 );
 
-INSERT INTO users (username, email, password, saldo, role) VALUES
-('admin', 'admin@gmail.com', '123', 0, 'ADMIN'),
-('customer', 'customer@gmail.com', '123', 500000, 'CUSTOMER');
+INSERT INTO users (username, email, password, role) VALUES
+('AdminCantik', 'admin@gmail.com', '123', 'ADMIN'),
+('Nadia', 'sabrinadiaa4@gmail.com', '123', 'CUSTOMER');
 
 INSERT INTO destination (name, location, category, description, price, image_url, latitude, longitude) VALUES
 ('Tanah Lot', 'Bali, Indonesia', 'Nature', 'Destinasi wisata dengan pemandangan laut dan pura yang ikonik.', 75000, 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80', -8.6212, 115.0868),
@@ -91,3 +90,4 @@ INSERT INTO destination (name, location, category, description, price, image_url
 ('Malioboro', 'Yogyakarta, Indonesia', 'City Tour', 'Area wisata belanja dan kuliner khas Yogyakarta.', 50000, 'https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&w=900&q=80', -7.7926, 110.3658),
 ('Bromo', 'Jawa Timur, Indonesia', 'Mountain', 'Gunung dengan sunrise terkenal dan pemandangan pasir berbisik.', 125000, 'https://images.unsplash.com/photo-1589308454676-22de49ed8f33?auto=format&fit=crop&w=900&q=80', -7.9425, 112.9530),
 ('Kota Lama', 'Semarang, Indonesia', 'Heritage', 'Kawasan heritage dengan bangunan tua bergaya kolonial.', 40000, 'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=900&q=80', -6.9683, 110.4288);
+

@@ -33,48 +33,74 @@
 
     <section class="profile-info-grid">
 
-        <div class="profile-info-card account-summary-card">
-            <div class="card-title-row">
-                <div class="card-icon">📊</div>
-                <div>
-                    <h2>Account Summary</h2>
-                    <p class="mini-subtitle">Ringkasan aktivitas perjalananmu</p>
-                </div>
-            </div>
+        <c:set var="latestPayment" value="${null}" />
 
-            <div class="account-summary-grid">
-                <div class="summary-box">
-                    <span>✈️</span>
-                    <small>Total Trip</small>
-                    <strong>${fn:length(payments)}</strong>
-                </div>
+<c:forEach var="payment" items="${payments}" varStatus="loop">
+    <c:if test="${loop.first}">
+        <c:set var="latestPayment" value="${payment}" />
+    </c:if>
+</c:forEach>
 
-                <div class="summary-box">
-                    <span>✅</span>
-                    <small>Status Akun</small>
-                    <strong>Active</strong>
-                </div>
+        <div class="profile-info-card account-summary-wrapper">
 
-                <div class="summary-box">
-                    <span>👤</span>
-                    <small>Role</small>
-                    <strong>${user.role}</strong>
-                </div>
+    <div class="card-title-row">
+        <div class="card-icon">📊</div>
 
-                <div class="summary-box">
-                    <span>🔐</span>
-                    <small>Security</small>
-                    <strong>Verified</strong>
-                </div>
-            </div>
-
-            <div class="account-note-card">
-                <div>
-                    <strong>Travel profile ready</strong>
-                    <p>Akun kamu sudah siap digunakan untuk membuat itinerary dan booking perjalanan baru.</p>
-                </div>
-            </div>
+        <div>
+            <h2>Account Summary</h2>
+            <p class="mini-subtitle">Ringkasan aktivitas perjalananmu</p>
         </div>
+    </div>
+
+    <c:set var="latestPayment" value="${null}" />
+
+    <c:forEach var="payment" items="${payments}" varStatus="loop">
+        <c:if test="${loop.first}">
+            <c:set var="latestPayment" value="${payment}" />
+        </c:if>
+    </c:forEach>
+
+    <div class="account-summary-grid">
+
+        <div class="summary-box">
+            <span>✈️</span>
+            <small>Total Trip</small>
+            <strong>${fn:length(payments)}</strong>
+        </div>
+
+        <div class="summary-box">
+            <span>🧾</span>
+            <small>Total Payment</small>
+            <strong>${fn:length(payments)}</strong>
+        </div>
+
+        <div class="summary-box">
+            <span>⭐</span>
+            <small>Destinasi Dirating</small>
+            <strong>${ratedCount}</strong>
+        </div>
+
+        <div class="summary-box">
+            <span>📍</span>
+            <small>Destinasi Terakhir</small>
+            <strong>
+                <c:choose>
+                    <c:when test="${not empty latestPayment and not empty latestPayment.booking.snapshotTitle}">
+                        ${latestPayment.booking.snapshotTitle}
+                    </c:when>
+                    <c:when test="${not empty latestPayment and not empty latestPayment.booking.snapshotDestinations}">
+                        ${latestPayment.booking.snapshotDestinations}
+                    </c:when>
+                    <c:otherwise>
+                        Belum ada
+                    </c:otherwise>
+                </c:choose>
+            </strong>
+        </div>
+
+    </div>
+
+</div>
 
         <div class="profile-info-card emergency-card-new">
             <div class="card-title-row">
@@ -215,8 +241,8 @@
 
         <c:if test="${empty payments}">
             <div class="profile-empty-state">
-                <h3>Belum ada payment history</h3>
-                <p>Riwayat pembayaran akan muncul setelah kamu melakukan booking.</p>
+                <h3>There is no history yet</h3>
+                <p>History will appear after you make a booking.</p>
             </div>
         </c:if>
     </section>

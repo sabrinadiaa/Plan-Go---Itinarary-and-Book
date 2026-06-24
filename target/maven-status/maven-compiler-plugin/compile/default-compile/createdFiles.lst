@@ -9,6 +9,7 @@ com\plango\controller\DestinationController.class
 com\plango\dto\review\ReviewRequest.class
 com\plango\config\SecurityConfig.class
 com\plango\dto\auth\LoginResponse.class
+com\plango\entity\EmergencyReport.class
 com\plango\dto\payment\PaymentRequest.class
 com\plango\dto\auth\RegisterRequest.class
 com\plango\entity\Category.class
@@ -17,7 +18,6 @@ com\plango\entity\ItineraryItem.class
 com\plango\repository\ReviewRepository.class
 com\plango\PlanGoApplication.class
 com\plango\entity\Notification.class
-com\plango\entity\EmergencyContact.class
 com\plango\entity\Booking.class
 com\plango\dto\booking\BookingRequest.class
 com\plango\entity\Payment.class
@@ -28,9 +28,9 @@ com\plango\repository\PaymentRepository.class
 com\plango\entity\Review.class
 com\plango\repository\NotificationRepository.class
 com\plango\controller\CustomerPageController.class
-com\plango\repository\EmergencyContactRepository.class
 com\plango\controller\HomeController.class
 com\plango\controller\PaymentController.class
+com\plango\controller\EmergencyController.class
 com\plango\repository\DestinationRepository.class
 com\plango\repository\ItineraryItemRepository.class
 com\plango\controller\AdminPageController.class
@@ -38,6 +38,7 @@ com\plango\repository\UserPreferenceRepository.class
 com\plango\service\ItineraryService.class
 com\plango\entity\Destination.class
 com\plango\controller\BookingController.class
+com\plango\repository\EmergencyReportRepository.class
 com\plango\entity\UserPreference.class
 com\plango\entity\Itinerary.class
 com\plango\repository\BookingRepository.class

@@ -118,10 +118,17 @@
                                 </button>
                             </form>
 
-                            <form method="post" action="/plan/item/${item.id}/delete" style="margin-top:10px;">
-                                <input type="hidden" name="itineraryId" value="${itinerary.id}">
-                                <button class="btn btn-danger btn-small" type="submit">Hapus</button>
-                            </form>
+                            <c:choose>
+                                <c:when test="${alreadyPaid or hasPendingBooking}">
+                                </c:when>
+
+                                <c:otherwise>
+                                    <form method="post" action="/plan/item/${item.id}/delete" style="margin-top:10px;">
+                                        <input type="hidden" name="itineraryId" value="${itinerary.id}">
+                                        <button class="btn btn-danger btn-small" type="submit">Hapus</button>
+                                    </form>
+                                </c:otherwise>
+                            </c:choose>
                         </div>
                     </article>
                 </c:forEach>

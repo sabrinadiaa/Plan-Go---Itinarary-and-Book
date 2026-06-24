@@ -2420,3 +2420,200 @@ th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spa
         border-radius: 0 !important;
     }
 }
+
+/* ===== FIX ACCOUNT SUMMARY BIAR JADI CARD RAPI ===== */
+
+.account-summary-card,
+.account-summary-card-new {
+    background: #ffffff !important;
+    border-radius: 26px !important;
+    padding: 28px !important;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.07) !important;
+    min-height: 360px;
+}
+
+.account-summary-grid,
+.summary-card-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    margin-top: 22px !important;
+}
+
+/* ini yang memperbaiki kotak Total Trip, Total Payment, dll */
+.summary-box,
+.summary-mini-card {
+    background: #f8f6f0 !important;
+    border: 1px solid #eee4d7 !important;
+    border-radius: 20px !important;
+    padding: 18px !important;
+    min-height: 120px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+
+    box-shadow: none !important;
+}
+
+.summary-box span,
+.summary-mini-card .summary-icon,
+.summary-icon {
+    width: 42px !important;
+    height: 42px !important;
+    background: #ffffff !important;
+    border-radius: 14px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 22px !important;
+    margin-bottom: 12px !important;
+}
+
+.summary-box small,
+.summary-mini-card small {
+    display: block !important;
+    color: #777 !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.4px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 8px !important;
+}
+
+.summary-box strong,
+.summary-mini-card strong {
+    display: block !important;
+    color: #2e2e2e !important;
+    font-size: 22px !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+}
+
+/* khusus destinasi terakhir biar tidak terlalu besar */
+.summary-box:nth-child(4) strong,
+.summary-mini-card:nth-child(4) strong {
+    font-size: 18px !important;
+}
+
+@media (max-width: 768px) {
+    .account-summary-grid,
+    .summary-card-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.payment-topbar-fix {
+    width: 100%;
+    height: 72px;
+    background: #ffffff;
+    padding: 0 36px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+.payment-topbar-fix .payment-logo-fix {
+    text-decoration: none;
+    color: #4f7f5f;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.payment-topbar-fix .payment-actions-fix {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.payment-topbar-fix .payment-actions-fix a {
+    text-decoration: none;
+    color: #4f7f5f;
+    background: #ffffff;
+    border: 1px solid #d8d1c5;
+    padding: 9px 18px;
+    border-radius: 22px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.payment-topbar-fix .payment-actions-fix a:hover {
+    background: #4f7f5f;
+    color: #ffffff;
+}
+
+.checkout-page {
+    margin-top: 24px !important;
+}
+
+.checkout-page {
+    width: min(430px, 100%);
+    margin: 0 auto !important;
+    padding: 28px 14px 120px !important;
+    box-sizing: border-box;
+}
+
+/* ===== ADMIN DESTINATION CRUD ===== */
+
+.admin-form-card {
+    margin-bottom: 30px;
+}
+
+.admin-destination-form label {
+    display: block;
+    margin: 10px 0 6px;
+    font-size: 13px;
+    font-weight: 900;
+    color: #4f7f5f;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.admin-destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
+
+.admin-destination-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.admin-destination-img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    background: #ddd6ca;
+}
+
+.admin-img-placeholder {
+    background: #ddd6ca;
+}
+
+.admin-destination-card .admin-destination-form {
+    padding: 18px;
+}
+
+.admin-destination-card form:last-child {
+    padding: 0 18px 18px;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -15,8 +15,7 @@
         <a class="logo" href="/explore">Plan & Go</a>
 
         <div class="action-row">
-            <a class="btn btn-outline btn-small" href="/explore">Kembali</a>
-            <a class="btn btn-outline btn-small" href="/logout">Logout</a>
+             <a class="btn btn-outline btn-small" href="/logout">Logout</a>
         </div>
     </header>
 

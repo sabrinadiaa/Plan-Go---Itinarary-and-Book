@@ -304,6 +304,7 @@ public class CustomerPageController {
 
         model.addAttribute("user", user);
         model.addAttribute("payments", paymentService.findByUserId(userId));
+        model.addAttribute("ratedCount", reviewRepository.countByUserId(userId));
 
         return "profile";
     }

@@ -10,16 +10,18 @@
 </head>
 
 <body class="payment-success-body">
+   
+<header class="topbar">
+    <a class="logo" href="/explore">Plan & Go</a>
 
-<div class="payment-success-page">
-    <header class="full-page-header">
-    <a href="/explore" class="full-page-logo">Plan & Go</a>
-
-    <div class="full-page-actions">
-        <a href="/plan">Booking</a>
-        <a href="/logout">Logout</a>
+    <div class="action-row">
+        <a class="btn btn-outline btn-small" href="/logout">Logout</a>
     </div>
 </header>
+
+<div class="checkout-page">
+<div class="payment-success-page">
+
     <div class="success-icon">
         ✓
     </div>

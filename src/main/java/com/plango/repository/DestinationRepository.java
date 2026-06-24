@@ -48,4 +48,58 @@ public class DestinationRepository {
             return Optional.empty();
         }
     }
+
+    public void createFromAdmin(Destination destination) {
+        String sql = """
+                INSERT INTO destination
+                (name, location, category, description, price, image_url, latitude, longitude)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """;
+
+        jdbcTemplate.update(
+                sql,
+                destination.getName(),
+                destination.getLocation(),
+                destination.getCategory(),
+                destination.getDescription(),
+                destination.getPrice(),
+                destination.getImageUrl(),
+                destination.getLatitude(),
+                destination.getLongitude()
+        );
+    }
+
+    public void updateFromAdmin(Destination destination) {
+        String sql = """
+                UPDATE destination
+                SET name = ?,
+                    location = ?,
+                    category = ?,
+                    description = ?,
+                    price = ?,
+                    image_url = ?,
+                    latitude = ?,
+                    longitude = ?
+                WHERE id = ?
+                """;
+
+        jdbcTemplate.update(
+                sql,
+                destination.getName(),
+                destination.getLocation(),
+                destination.getCategory(),
+                destination.getDescription(),
+                destination.getPrice(),
+                destination.getImageUrl(),
+                destination.getLatitude(),
+                destination.getLongitude(),
+                destination.getId()
+        );
+    }
+
+    public void deleteFromAdmin(Long id) {
+        jdbcTemplate.update("DELETE FROM review WHERE destination_id = ?", id);
+        jdbcTemplate.update("DELETE FROM itinerary_item WHERE destination_id = ?", id);
+        jdbcTemplate.update("DELETE FROM destination WHERE id = ?", id);
+    }
 }

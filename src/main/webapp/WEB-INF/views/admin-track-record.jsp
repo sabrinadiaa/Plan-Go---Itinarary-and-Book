@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,16 +18,34 @@
         <section class="hero">
             <div>
                 <p class="brand">CUSTOMER SAFETY TRACKING</p>
-                <h1>Track Record</h1>
-                <p class="subtitle">Versi JSP. Data contoh untuk monitoring keselamatan customer.</p>
             </div>
-            <button class="btn btn-danger">🚨 Global Alert</button>
+
         </section>
 
         <section class="grid" style="margin-bottom:24px;">
-            <div class="card kpi"><div class="kpi-icon">🌍</div><div><p class="subtitle">Active Travelers</p><h2>5</h2></div></div>
-            <div class="card kpi"><div class="kpi-icon">🛡️</div><div><p class="subtitle">Status Safe</p><h2>3</h2></div></div>
-            <div class="card kpi"><div class="kpi-icon">⚠️</div><div><p class="subtitle">Urgent Attention</p><h2 style="color:#C53030;">2</h2></div></div>
+            <div class="card kpi">
+                <div class="kpi-icon">🌍</div>
+                <div>
+                    <p class="subtitle">Emergency Reports</p>
+                    <h2>${activeTravelers}</h2>
+                </div>
+            </div>
+
+            <div class="card kpi">
+                <div class="kpi-icon">🛡️</div>
+                <div>
+                    <p class="subtitle">Handled</p>
+                    <h2>${safeCount}</h2>
+                </div>
+            </div>
+
+            <div class="card kpi">
+                <div class="kpi-icon">⚠️</div>
+                <div>
+                    <p class="subtitle">Urgent Attention</p>
+                    <h2 style="color:#C53030;">${urgentCount}</h2>
+                </div>
+            </div>
         </section>
 
         <div class="table-wrap">
@@ -33,18 +53,58 @@
                 <thead>
                 <tr>
                     <th>Customer</th>
-                    <th>Destination</th>
+                    <th>Email</th>
                     <th>Safety Status</th>
-                    <th>Emergency History</th>
+                    <th>Emergency Message</th>
                     <th>Last Updated</th>
+                    <th>Aksi</th>
                 </tr>
                 </thead>
+
                 <tbody>
-                <tr><td>Jane Doe</td><td>Kyoto, Japan</td><td><span class="badge">Safe</span></td><td>No History</td><td>2 mins ago</td></tr>
-                <tr><td>Mark Stevenson</td><td>Reykjavik, Iceland</td><td><span class="badge badge-red">Unsafe</span></td><td>2 Incidents</td><td>Just now</td></tr>
-                <tr><td>Linda Wu</td><td>Zurich, Switzerland</td><td><span class="badge">Safe</span></td><td>No History</td><td>15 mins ago</td></tr>
-                <tr><td>Robert Chen</td><td>Nairobi, Kenya</td><td><span class="badge badge-red">Unsafe</span></td><td>No History</td><td>8 mins ago</td></tr>
-                <tr><td>Elena Garcia</td><td>Berlin, Germany</td><td><span class="badge">Safe</span></td><td>No History</td><td>1 hour ago</td></tr>
+                <c:forEach var="report" items="${emergencyReports}">
+                    <tr>
+                        <td>${report.username}</td>
+                        <td>${report.email}</td>
+
+                        <td>
+                            <c:choose>
+                                <c:when test="${report.status == 'DONE'}">
+                                    <span class="badge">Handled</span>
+                                </c:when>
+
+                                <c:otherwise>
+                                    <span class="badge badge-red">Urgent</span>
+                                </c:otherwise>
+                            </c:choose>
+                        </td>
+
+                        <td>${report.message}</td>
+                        <td>${report.createdAt}</td>
+
+                        <td>
+                            <c:if test="${report.status != 'DONE'}">
+                                <form method="post" action="/admin/emergency/${report.id}/done">
+                                    <button class="btn btn-small" type="submit">
+                                        Tandai Selesai
+                                    </button>
+                                </form>
+                            </c:if>
+
+                            <c:if test="${report.status == 'DONE'}">
+                                <span class="badge">Selesai</span>
+                            </c:if>
+                        </td>
+                    </tr>
+                </c:forEach>
+
+                <c:if test="${empty emergencyReports}">
+                    <tr>
+                        <td colspan="6" style="text-align:center; color:#777;">
+                            Belum ada laporan emergency dari customer.
+                        </td>
+                    </tr>
+                </c:if>
                 </tbody>
             </table>
         </div>

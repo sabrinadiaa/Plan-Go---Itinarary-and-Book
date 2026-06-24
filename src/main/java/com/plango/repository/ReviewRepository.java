@@ -122,4 +122,13 @@ public class ReviewRepository {
 
         return review;
     }
+    public int countByUserId(Long userId) {
+        String sql = """
+                SELECT COUNT(*)
+                FROM review
+                WHERE user_id = ?
+                """;
+
+        return jdbcTemplate.queryForObject(sql, Integer.class, userId);
+    }
 }

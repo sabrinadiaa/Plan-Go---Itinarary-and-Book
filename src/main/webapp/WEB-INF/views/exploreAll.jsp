@@ -18,9 +18,7 @@
         <c:choose>
             <c:when test="${not empty itineraryId}">
             </c:when>
-            <c:otherwise>
-                <a href="/explore">Kembali</a>
-            </c:otherwise>
+            
         </c:choose>
 
         <a href="/logout">Logout</a>

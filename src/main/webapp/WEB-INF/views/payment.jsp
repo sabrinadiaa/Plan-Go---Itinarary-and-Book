@@ -11,18 +11,18 @@
 
 <body class="checkout-body">
 
-<div class="checkout-page">
+<header class="topbar">
+    <a class="logo" href="/explore">Plan & Go</a>
 
-
-    <header class="payment-page-header">
-    <a href="/explore" class="full-page-logo">Plan & Go</a>
-
-    <div class="payment-header-actions">
-        <a href="/plan">Kembali</a>
-        <a href="/logout">Logout</a>
+    <div class="action-row">
+        <a class="btn btn-outline btn-small" href="/logout">Logout</a>
     </div>
 </header>
 
+<div class="checkout-page">
+
+<div class="checkout-page">
+<div class="checkout-page">
     <section class="checkout-trip-card">
         <c:choose>
             <c:when test="${not empty booking.snapshotImageUrl}">
