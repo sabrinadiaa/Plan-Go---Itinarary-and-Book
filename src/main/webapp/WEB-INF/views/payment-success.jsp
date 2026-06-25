@@ -113,7 +113,7 @@
     </div>
 
     <a href="/plan" class="success-main-button">
-        🗓 View Itinerary
+        View Itinerary
     </a>
 
 </div>

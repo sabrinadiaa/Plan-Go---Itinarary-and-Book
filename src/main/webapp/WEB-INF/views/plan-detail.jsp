@@ -82,7 +82,7 @@
 
                             <h3 style="margin-top:12px;">${item.destination.name}</h3>
 
-                            <p class="subtitle">📍 ${item.destination.location}</p>
+                            <p class="subtitle"> ${item.destination.location}</p>
 
                             <p class="price">
                                 Rp <fmt:formatNumber value="${item.destination.price}" type="number" groupingUsed="true"/>
@@ -137,10 +137,21 @@
     </main>
 
     <nav class="bottom-nav">
-        <a class="nav-item" href="/explore">🧭<br>Explore</a>
-        <a class="nav-item active" href="/plan">🗺️<br>Booking</a>
-        <a class="nav-item" href="/profile">👤<br>Profile</a>
-    </nav>
+        <a href="/explore">
+        <span><i class="fa-solid fa-compass"></i></span>
+        <small>Explore</small>
+    </a>
+
+    <a href="/plan" class="active">
+        <span><i class="fa-solid fa-calendar-check"></i></span>
+        <small>Booking</small>
+    </a>
+
+    <a href="/profile">
+        <span><i class="fa-solid fa-user"></i></span>
+        <small>Profile</small>
+    </a>
+</nav>
 </div>
 </body>
 </html>

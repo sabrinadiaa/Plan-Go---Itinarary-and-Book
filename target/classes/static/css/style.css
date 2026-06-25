@@ -2617,3 +2617,218 @@ th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spa
         grid-template-columns: 1fr;
     }
 }
+
+/*fic card emergency*/
+/* ===== FIX EMERGENCY CARD IMAGE KECIL ===== */
+
+.emergency-number-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    margin-top: 20px !important;
+}
+
+.emergency-number-card,
+.emergency-number-card.wide {
+    grid-column: auto !important;
+    min-height: 82px !important;
+    padding: 12px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+
+    background: #f8f6f0 !important;
+    border: 1px solid #eee4d7 !important;
+    border-radius: 18px !important;
+
+    text-decoration: none !important;
+    color: #2e2e2e !important;
+    overflow: hidden !important;
+}
+
+.emergency-card-img {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    max-width: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+}
+
+.emergency-number-card strong {
+    font-size: 20px !important;
+    line-height: 1 !important;
+}
+
+.emergency-number-card span {
+    font-size: 11px !important;
+    margin-top: 4px !important;
+}
+
+.emergency-number-card:hover {
+    background: #4f7f5f !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(79,127,95,0.22);
+}
+
+.emergency-number-card:hover span {
+    color: rgba(255,255,255,0.85) !important;
+}
+
+/* ===== FIX PROFILE SUMMARY IMAGE CARD FINAL ===== */
+
+.profile-info-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 22px !important;
+    align-items: stretch !important;
+}
+
+.account-summary-wrapper,
+.emergency-card-new {
+    background: #ffffff !important;
+    border-radius: 26px !important;
+    padding: 24px !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.07) !important;
+    overflow: hidden !important;
+}
+
+.account-summary-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+}
+
+.summary-box {
+    min-height: 76px !important;
+    padding: 10px 12px !important;
+    background: #f8f6f0 !important;
+    border: 1px solid #eee4d7 !important;
+    border-radius: 18px !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+
+    overflow: hidden !important;
+}
+
+.summary-box-img {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    max-width: 42px !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+}
+
+.summary-box small {
+    display: block !important;
+    font-size: 9px !important;
+    color: #777 !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 5px !important;
+}
+
+.summary-box strong {
+    display: block !important;
+    font-size: 18px !important;
+    color: #222 !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+}
+
+/* ===== FIX EMERGENCY CONTACT IMAGE CARD FINAL ===== */
+
+.emergency-card-new .card-title-row {
+    margin-bottom: 18px !important;
+}
+
+.emergency-number-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+.emergency-number-card {
+    min-height: 64px !important;
+    padding: 9px 10px !important;
+    background: #f8f6f0 !important;
+    border: 1px solid #eee4d7 !important;
+    border-radius: 16px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+
+    text-decoration: none !important;
+    color: #2e2e2e !important;
+    overflow: hidden !important;
+}
+
+.emergency-card-img {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    max-width: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+
+    object-fit: cover !important;
+    border-radius: 9px !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+}
+
+.emergency-number-card strong {
+    display: block !important;
+    font-size: 18px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+}
+
+.emergency-number-card span {
+    display: block !important;
+    margin-top: 4px !important;
+    font-size: 9px !important;
+    color: #777 !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
+
+.emergency-number-card:hover {
+    background: #4f7f5f !important;
+    color: #ffffff !important;
+}
+
+.emergency-number-card:hover span {
+    color: rgba(255,255,255,0.85) !important;
+}
+
+@media (max-width: 768px) {
+    .profile-info-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .account-summary-grid,
+    .emergency-number-grid {
+        grid-template-columns: 1fr !important;
+    }
+}

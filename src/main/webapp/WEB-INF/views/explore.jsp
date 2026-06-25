@@ -20,7 +20,7 @@
         <form method="post" action="/emergency" class="emergency-form">
             <button type="submit" class="emergency-button"
                     onclick="return confirm('Kirim laporan emergency ke admin?')">
-                🚨
+                !
             </button>
         </form>
 
@@ -36,9 +36,6 @@
     </section>
 
     <c:if test="${param.emergencySent == 'true'}">
-        <div class="emergency-alert-success">
-            🚨 Laporan emergency berhasil dikirim ke admin.
-        </div>
     </c:if>
 
     <section class="journey-grid">

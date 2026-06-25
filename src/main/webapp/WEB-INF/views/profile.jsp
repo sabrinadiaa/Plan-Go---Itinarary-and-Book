@@ -8,6 +8,7 @@
 <head>
     <title>Profile - Plan & Go</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body class="profile-body">
@@ -21,7 +22,7 @@
 
     <section class="profile-hero-card">
         <div class="profile-avatar">
-            ${user.username.substring(0,1)}
+            ${fn:substring(user.username, 0, 1)}
         </div>
 
         <div>
@@ -35,20 +36,16 @@
 
         <c:set var="latestPayment" value="${null}" />
 
-<c:forEach var="payment" items="${payments}" varStatus="loop">
-    <c:if test="${loop.first}">
-        <c:set var="latestPayment" value="${payment}" />
-    </c:if>
-</c:forEach>
+        <c:forEach var="payment" items="${payments}" varStatus="loop">
+            <c:if test="${loop.first}">
+                <c:set var="latestPayment" value="${payment}" />
+            </c:if>
+        </c:forEach>
 
         <div class="profile-info-card account-summary-wrapper">
-
     <div class="card-title-row">
-        <div class="card-icon">📊</div>
-
         <div>
             <h2>Account Summary</h2>
-            <p class="mini-subtitle">Ringkasan aktivitas perjalananmu</p>
         </div>
     </div>
 
@@ -63,94 +60,102 @@
     <div class="account-summary-grid">
 
         <div class="summary-box">
-            <span>✈️</span>
-            <small>Total Trip</small>
-            <strong>${fn:length(payments)}</strong>
+            <img class="summary-box-img" src="/assets/totalTrip.png" alt="Total Trip">
+            <div>
+                <small>Total Trip</small>
+                <strong>${fn:length(payments)}</strong>
+            </div>
         </div>
 
         <div class="summary-box">
-            <span>🧾</span>
-            <small>Total Payment</small>
-            <strong>${fn:length(payments)}</strong>
+            <img class="summary-box-img" src="/assets/pay.png" alt="Total Payment">
+            <div>
+                <small>Total Payment</small>
+                <strong>${fn:length(payments)}</strong>
+            </div>
         </div>
 
         <div class="summary-box">
-            <span>⭐</span>
-            <small>Destinasi Dirating</small>
-            <strong>${ratedCount}</strong>
+            <img class="summary-box-img" src="/assets/review.png" alt="Rated Destinations">
+            <div>
+                <small>Rated Destinations</small>
+                <strong>${ratedCount}</strong>
+            </div>
         </div>
 
         <div class="summary-box">
-            <span>📍</span>
-            <small>Destinasi Terakhir</small>
-            <strong>
-                <c:choose>
-                    <c:when test="${not empty latestPayment and not empty latestPayment.booking.snapshotTitle}">
-                        ${latestPayment.booking.snapshotTitle}
-                    </c:when>
-                    <c:when test="${not empty latestPayment and not empty latestPayment.booking.snapshotDestinations}">
-                        ${latestPayment.booking.snapshotDestinations}
-                    </c:when>
-                    <c:otherwise>
-                        Belum ada
-                    </c:otherwise>
-                </c:choose>
-            </strong>
+            <img class="summary-box-img" src="/assets/lastDestination.png" alt="Last destination visited">
+            <div>
+                <small>Last Destination Visited</small>
+                <strong>
+                    <c:choose>
+                        <c:when test="${not empty latestPayment and not empty latestPayment.booking.snapshotTitle}">
+                            ${latestPayment.booking.snapshotTitle}
+                        </c:when>
+                        <c:when test="${not empty latestPayment and not empty latestPayment.booking.snapshotDestinations}">
+                            ${latestPayment.booking.snapshotDestinations}
+                        </c:when>
+                        <c:otherwise>
+                            No history yet
+                        </c:otherwise>
+                    </c:choose>
+                </strong>
+            </div>
         </div>
 
     </div>
-
 </div>
 
         <div class="profile-info-card emergency-card-new">
             <div class="card-title-row">
-                <div class="card-icon emergency">🚨</div>
+                <i class="fa-solid fa-triangle-exclamation"></i>
                 <div>
-                    <h2>Kontak Darurat</h2>
-                    <p class="mini-subtitle">Nomor penting saat perjalanan</p>
+                    <h2>Emergency Contact</h2>
                 </div>
             </div>
 
             <div class="emergency-number-grid">
+
                 <a href="tel:112" class="emergency-number-card">
-                    <div class="emergency-emoji">🆘</div>
+                    <img class="emergency-card-img" src="/assets/sos.png" alt="General Emergency">
                     <div>
                         <strong>112</strong>
-                        <span>Darurat Umum</span>
+                        <span>General Emergency</span>
                     </div>
                 </a>
 
                 <a href="tel:110" class="emergency-number-card">
-                    <div class="emergency-emoji">👮</div>
+                    <img class="emergency-card-img" src="/assets/polisi.png" alt="Police">
                     <div>
                         <strong>110</strong>
-                        <span>Polisi</span>
+                        <span>Police</span>
                     </div>
                 </a>
 
                 <a href="tel:119" class="emergency-number-card">
-                    <div class="emergency-emoji">🚑</div>
+                    <img class="emergency-card-img" src="/assets/ambulance.png" alt="Ambulance">
                     <div>
                         <strong>119</strong>
-                        <span>Ambulans</span>
+                        <span>Ambulance</span>
                     </div>
                 </a>
 
                 <a href="tel:113" class="emergency-number-card">
-                    <div class="emergency-emoji">🚒</div>
+                    <img class="emergency-card-img" src="/assets/damkar.png" alt="Firefighter">
                     <div>
                         <strong>113</strong>
-                        <span>Pemadam</span>
+                        <span>Firefighter</span>
                     </div>
                 </a>
 
-                <a href="tel:115" class="emergency-number-card wide">
-                    <div class="emergency-emoji">🚁</div>
+                <a href="tel:115" class="emergency-number-card">
+                    <img class="emergency-card-img" src="/assets/sar.png" alt="SAR Basarnas">
                     <div>
                         <strong>115</strong>
                         <span>SAR / Basarnas</span>
                     </div>
                 </a>
+
             </div>
         </div>
 
@@ -160,7 +165,6 @@
         <div class="payment-history-header">
             <div>
                 <p class="profile-label">TRIP HISTORY</p>
-                <h2>Payment History</h2>
             </div>
         </div>
 
@@ -198,7 +202,6 @@
                                 </h3>
 
                                 <p>
-                                    📍
                                     <c:choose>
                                         <c:when test="${not empty payment.booking.snapshotLocation}">
                                             ${payment.booking.snapshotLocation}
@@ -251,17 +254,14 @@
 
 <nav class="bottom-nav">
     <a href="/explore">
-        <span>🏝️</span>
         <small>Explore</small>
     </a>
 
     <a href="/plan">
-        <span>🗺️</span>
         <small>Booking</small>
     </a>
 
     <a href="/profile" class="active">
-        <span>👤</span>
         <small>Profile</small>
     </a>
 </nav>

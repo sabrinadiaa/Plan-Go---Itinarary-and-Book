@@ -38,7 +38,7 @@
 
                 <h1 style="margin-top:12px;">${destination.name}</h1>
 
-                <p class="subtitle">📍 ${destination.location}</p>
+                <p class="subtitle"> ${destination.location}</p>
 
                 <p>${destination.description}</p>
 
@@ -84,10 +84,21 @@
     </main>
 
     <nav class="bottom-nav">
-        <a class="nav-item active" href="/explore">🧭<br>Explore</a>
-        <a class="nav-item" href="/plan">🗺️<br>Booking</a>
-        <a class="nav-item" href="/profile">👤<br>Profile</a>
-    </nav>
+    <a href="/explore" class="active">
+        <span><i class="fa-solid fa-compass"></i></span>
+        <small>Explore</small>
+    </a>
+
+    <a href="/plan">
+        <span><i class="fa-solid fa-calendar-check"></i></span>
+        <small>Booking</small>
+    </a>
+
+    <a href="/profile">
+        <span><i class="fa-solid fa-user"></i></span>
+        <small>Profile</small>
+    </a>
+</nav>
 </div>
 </body>
 </html>

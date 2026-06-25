@@ -76,27 +76,27 @@
         </c:url>
 
         <a class="${category == 'ALL' ? 'active' : ''}" href="${allUrl}">
-            ◎ All
+             All
         </a>
 
         <a class="${category == 'NATURE' ? 'active' : ''}" href="${natureUrl}">
-            🏔 Nature
+             Nature
         </a>
 
         <a class="${category == 'SHOPPING' ? 'active' : ''}" href="${shoppingUrl}">
-            🛍 Shopping
+             Shopping
         </a>
 
         <a class="${category == 'CAFE' ? 'active' : ''}" href="${cafeUrl}">
-            ☕ Cafe
+             Cafe
         </a>
 
         <a class="${category == 'HOTEL' ? 'active' : ''}" href="${hotelUrl}">
-            🏨 Hotel
+             Hotel
         </a>
 
         <a class="${category == 'CLUB' ? 'active' : ''}" href="${clubUrl}">
-            🎵 Club
+             Club
         </a>
     </div>
 
@@ -125,7 +125,7 @@
                                 </strong>
                             </div>
 
-                            <p>◎ ${destination.location}</p>
+                            <p> ${destination.location}</p>
 
                             <form method="post" action="/plan/${itineraryId}/add-destination" class="add-itinerary-form">
                                 <input type="hidden" name="destinationId" value="${destination.id}">
@@ -179,17 +179,17 @@
 
 <nav class="bottom-nav">
     <a href="/explore" class="active">
-        <span>🏝️</span>
+        <span><i class="fa-solid fa-compass"></i></span>
         <small>Explore</small>
     </a>
 
     <a href="/plan">
-        <span>🗺️</span>
+        <span><i class="fa-solid fa-calendar-check"></i></span>
         <small>Booking</small>
     </a>
 
     <a href="/profile">
-        <span>👤</span>
+        <span><i class="fa-solid fa-user"></i></span>
         <small>Profile</small>
     </a>
 </nav>

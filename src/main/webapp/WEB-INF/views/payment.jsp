@@ -150,22 +150,21 @@
     </section>
 
 
-
 </div>
 
-<nav class="bottom-nav">
-    <a href="/explore">
-        <span>🏝️</span>
+    <nav class="bottom-nav">
+        <a href="/explore">
+        <span><i class="fa-solid fa-compass"></i></span>
         <small>Explore</small>
     </a>
 
     <a href="/plan" class="active">
-        <span>🗺️</span>
+        <span><i class="fa-solid fa-calendar-check"></i></span>
         <small>Booking</small>
     </a>
 
     <a href="/profile">
-        <span>👤</span>
+        <span><i class="fa-solid fa-user"></i></span>
         <small>Profile</small>
     </a>
 </nav>

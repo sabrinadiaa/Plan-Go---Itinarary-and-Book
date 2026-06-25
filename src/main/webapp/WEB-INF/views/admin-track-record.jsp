@@ -111,10 +111,18 @@
     </main>
 
     <nav class="bottom-nav admin-nav">
-        <a class="nav-item" href="/admin/dashboard">🏠<br>Home</a>
-        <a class="nav-item" href="/admin/booking">📋<br>Booking</a>
-        <a class="nav-item active" href="/admin/track-record">📊<br>Track</a>
-    </nav>
+    <a class="nav-item" href="/admin/dashboard">
+        <i class="fa-solid fa-house"></i><br>Home
+    </a>
+
+    <a class="nav-item" href="/admin/booking">
+        <i class="fa-solid fa-clipboard-list"></i><br>Booking
+    </a>
+
+    <a class="nav-item active" href="/admin/track-record">
+        <i class="fa-solid fa-chart-line"></i><br>Track
+    </a>
+</nav>
 </div>
 </body>
 </html>

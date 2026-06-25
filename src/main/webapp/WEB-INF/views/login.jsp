@@ -7,6 +7,7 @@
     <title>Login - Plan & Go</title>
 
     <style>
+        /* Digunakan agar ukuran elemen lebih konsisten dan tidak ada margin bawaan browser*/
         * {
             box-sizing: border-box;
         }
@@ -19,13 +20,19 @@
             color: #2e2e2e;
         }
 
+        /*
+            Halaman dibagi menjadi 2 bagian:
+            kiri untuk visual/branding, kanan untuk form login dan register.
+        */
         .auth-page {
             min-height: 100vh;
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
         }
 
-        /* LEFT SIDE */
+        /* 
+            Menampilkan gambar background dan nama web yaitu Plan & Go
+        */
         .auth-visual {
             position: relative;
             padding: 34px;
@@ -34,21 +41,28 @@
             color: white;
         }
 
+        /* 
+            Background gambar login.
+            Gambar diambil dari folder: src/main/resources/static/assets/images/login-bg.jpg
+        */
         .auth-visual::before {
             content: "";
             position: absolute;
             inset: 0;
             background:
                 linear-gradient(120deg, rgba(31,50,39,0.95), rgba(31,50,39,0.45)),
-                url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1400&auto=format&fit=crop");
+                url("/assets/bedugul.webp");
             background-size: cover;
             background-position: center;
             z-index: 0;
         }
 
+        /* 
+            Konten di atas background.
+        */
         .visual-content {
             position: relative;
-            z-index: 2;
+            z-index: 2; /* z-index digunakan supaya teks tidak tertutup oleh gambar background */
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -66,87 +80,12 @@
         }
 
         .visual-title h1 {
-            margin: 0 0 14px;
+            margin: 0;
             font-size: 56px;
             line-height: 1.05;
         }
 
-        .visual-title p {
-            margin: 0;
-            font-size: 17px;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.82);
-        }
-
-        .destination-collage {
-            position: absolute;
-            right: 34px;
-            bottom: 34px;
-            width: 410px;
-            height: 340px;
-            z-index: 1;
-        }
-
-        .photo-card {
-            position: absolute;
-            overflow: hidden;
-            border-radius: 24px;
-            box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-            border: 4px solid rgba(255,255,255,0.18);
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .photo-card.one {
-            width: 210px;
-            height: 260px;
-            left: 0;
-            top: 50px;
-            transform: rotate(-5deg);
-        }
-
-        .photo-card.two {
-            width: 190px;
-            height: 210px;
-            right: 10px;
-            top: 0;
-            transform: rotate(6deg);
-        }
-
-        .photo-card.three {
-            width: 190px;
-            height: 160px;
-            right: 20px;
-            bottom: 0;
-            transform: rotate(-3deg);
-        }
-
-        .photo-card.four {
-            width: 150px;
-            height: 130px;
-            left: 140px;
-            bottom: 20px;
-            transform: rotate(7deg);
-        }
-
-        .visual-badge {
-            width: fit-content;
-            margin-top: 22px;
-            background: rgba(255,255,255,0.16);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: white;
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-weight: 800;
-            font-size: 13px;
-        }
-
-        /* RIGHT SIDE */
+        /* Area untuk menampilkan card login dan register */
         .auth-panel {
             display: flex;
             align-items: center;
@@ -157,6 +96,7 @@
                 #f8f6f0;
         }
 
+        /* Card utama form */
         .auth-card {
             width: 100%;
             max-width: 430px;
@@ -167,17 +107,26 @@
         }
 
         .auth-card h2 {
-            margin: 0 0 8px;
+            margin: 0 0 22px;
             font-size: 34px;
             color: #2e2e2e;
         }
 
-        .auth-card .subtitle {
-            margin: 0 0 26px;
-            color: #777;
-            line-height: 1.5;
+        /* Pesan error. Muncul jika login/register gagal dari controller*/
+        .error-box {
+            background: #ffe4e4;
+            color: #b91c1c;
+            padding: 12px 14px;
+            border-radius: 14px;
+            font-size: 13px;
+            margin-bottom: 18px;
+            font-weight: 700;
         }
 
+        /* 
+            TAB LOGIN DAN REGISTER
+            Digunakan untuk berpindah form tanpa pindah halaman.
+        */
         .auth-tabs {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -203,6 +152,10 @@
             color: white;
         }
 
+        /* 
+            FORM LOGIN DAN REGISTER
+            Default disembunyikan, lalu yang aktif akan ditampilkan.
+        */
         .auth-form {
             display: none;
         }
@@ -238,6 +191,7 @@
             box-shadow: 0 0 0 4px rgba(79,127,95,0.12);
         }
 
+        /* Tombol submit untuk login dan register */
         .auth-btn {
             width: 100%;
             border: none;
@@ -255,28 +209,7 @@
             background: #3f6c4d;
         }
 
-        .error-box {
-            background: #ffe4e4;
-            color: #b91c1c;
-            padding: 12px 14px;
-            border-radius: 14px;
-            font-size: 13px;
-            margin-bottom: 18px;
-            font-weight: 700;
-        }
-
-        .helper-text {
-            margin: 18px 0 0;
-            text-align: center;
-            color: #777;
-            font-size: 13px;
-        }
-
-        .helper-text span {
-            color: #4f7f5f;
-            font-weight: 900;
-        }
-
+        /* RESPONSIVE(Jika layar kecil, layout 2 kolom berubah menjadi 1 kolom) */
         @media (max-width: 900px) {
             .auth-page {
                 grid-template-columns: 1fr;
@@ -290,10 +223,6 @@
                 font-size: 38px;
             }
 
-            .destination-collage {
-                display: none;
-            }
-
             .auth-panel {
                 padding: 24px;
             }
@@ -305,6 +234,9 @@
 
 <div class="auth-page">
 
+    <!-- 
+        SECTION KIRI (tampilan visual dan branding aplikasi)
+    -->
     <section class="auth-visual">
         <div class="visual-content">
             <div class="brand">Plan & Go</div>
@@ -313,81 +245,78 @@
                 <h1>Explore beautiful places with one simple plan.</h1>
             </div>
         </div>
-
-        <div class="destination-collage">
-            <div class="photo-card one">
-                <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?q=80&w=900&auto=format&fit=crop" alt="Bali">
-            </div>
-
-            <div class="photo-card two">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=900&auto=format&fit=crop" alt="Beach">
-            </div>
-
-            <div class="photo-card three">
-                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=900&auto=format&fit=crop" alt="Nature">
-            </div>
-
-            <div class="photo-card four">
-                <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=900&auto=format&fit=crop" alt="Temple">
-            </div>
-        </div>
     </section>
 
+    <!-- 
+        SECTION KANAN
+        (Bagian ini berisi form login dan register untuk user)
+    -->
     <section class="auth-panel">
         <div class="auth-card">
             <h2>Welcome Back</h2>
-            <p class="subtitle">Masuk ke akunmu untuk lanjut membuat perjalanan baru.</p>
 
+            <!-- 
+                Menampilkan pesan error dari controller.
+                Contoh: email/password salah atau register gagal.
+            -->
             <c:if test="${not empty error}">
                 <div class="error-box">
                     ${error}
                 </div>
             </c:if>
 
+            <!-- 
+                Tombol tab untuk memilih form Login atau Register.
+            -->
             <div class="auth-tabs">
-                <button type="button" id="loginTab" class="active" onclick="showLogin()">Login</button>
-                <button type="button" id="registerTab" onclick="showRegister()">Register</button>
+                <button type="button" id="loginTab" class="active" onclick="showLogin()">
+                    Login
+                </button>
+
+                <button type="button" id="registerTab" onclick="showRegister()">
+                    Register
+                </button>
             </div>
 
+            <!-- 
+                FORM LOGIN
+                Data dikirim ke endpoint POST /login.
+            -->
             <form id="loginForm" class="auth-form active" method="post" action="/login">
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="Masukkan email" required>
+                    <input type="email" name="email" placeholder="Enter your email" required>
                 </div>
 
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" name="password" placeholder="Masukkan password" required>
+                    <input type="password" name="password" placeholder="Enter your password" required>
                 </div>
 
                 <button class="auth-btn" type="submit">Login</button>
-
-                <p class="helper-text">
-                    Belum punya akun? <span onclick="showRegister()" style="cursor:pointer;">Daftar sekarang</span>
-                </p>
             </form>
 
+            <!-- 
+                FORM REGISTER
+                Data dikirim ke endpoint POST /register.
+            -->
             <form id="registerForm" class="auth-form" method="post" action="/register">
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" name="username" placeholder="Masukkan username" required>
+                    <input type="text" name="username" placeholder="Create your username" required>
                 </div>
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="Masukkan email" required>
+                    <input type="email" name="email" placeholder="Enter your email" required>
                 </div>
 
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" name="password" placeholder="Buat password" required>
+                    <input type="password" name="password" placeholder="Enter your password" required>
                 </div>
 
                 <button class="auth-btn" type="submit">Register</button>
-
-                <p class="helper-text">
-                    Sudah punya akun? <span onclick="showLogin()" style="cursor:pointer;">Login di sini</span>
-                </p>
             </form>
         </div>
     </section>
@@ -395,6 +324,10 @@
 </div>
 
 <script>
+    /*
+        Fungsi showLogin()
+        Digunakan untuk menampilkan form login dan menyembunyikan form register.
+    */
     function showLogin() {
         document.getElementById("loginForm").classList.add("active");
         document.getElementById("registerForm").classList.remove("active");
@@ -403,6 +336,10 @@
         document.getElementById("registerTab").classList.remove("active");
     }
 
+    /*
+        Fungsi showRegister()
+        Digunakan untuk menampilkan form register dan menyembunyikan form login.
+    */
     function showRegister() {
         document.getElementById("registerForm").classList.add("active");
         document.getElementById("loginForm").classList.remove("active");
@@ -411,6 +348,10 @@
         document.getElementById("loginTab").classList.remove("active");
     }
 
+    /*
+        Jika controller mengirim registerMode = true,
+        maka halaman otomatis membuka tab Register.
+    */
     <c:if test="${registerMode}">
         showRegister();
     </c:if>
