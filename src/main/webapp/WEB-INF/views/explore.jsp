@@ -156,7 +156,7 @@
                         </strong>
                     </div>
 
-                    <p>📍 ${destination.location}</p>
+                    <p> ${destination.location}</p>
                 </div>
 
             </a>

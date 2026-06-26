@@ -15,7 +15,7 @@ public class DestinationService {
         this.repository = repository;
     }
 
-    public List<Destination> getAll(){
+    public List<Destination> getAll(){ /*polymorp */
         return repository.findAll();
     }
 

@@ -24,7 +24,7 @@
 
         <section class="grid" style="margin-bottom:24px;">
             <div class="card kpi">
-                <div class="kpi-icon">🌍</div>
+                
                 <div>
                     <p class="subtitle">Emergency Reports</p>
                     <h2>${activeTravelers}</h2>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="card kpi">
-                <div class="kpi-icon">🛡️</div>
+               
                 <div>
                     <p class="subtitle">Handled</p>
                     <h2>${safeCount}</h2>
@@ -40,7 +40,7 @@
             </div>
 
             <div class="card kpi">
-                <div class="kpi-icon">⚠️</div>
+                
                 <div>
                     <p class="subtitle">Urgent Attention</p>
                     <h2 style="color:#C53030;">${urgentCount}</h2>

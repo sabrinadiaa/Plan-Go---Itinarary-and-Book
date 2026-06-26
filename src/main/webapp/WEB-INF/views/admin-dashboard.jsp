@@ -149,11 +149,11 @@
     </main>
 
     <nav class="bottom-nav admin-nav">
-    <a class="nav-item href="/admin/dashboard">
+    <a class="nav-item active" href="/admin/dashboard">
         <i class="fa-solid fa-house"></i><br>Home
     </a>
 
-    <a class="nav-item active" href="/admin/booking">
+    <a class="nav-item" href="/admin/booking">
         <i class="fa-solid fa-clipboard-list"></i><br>Booking
     </a>
 

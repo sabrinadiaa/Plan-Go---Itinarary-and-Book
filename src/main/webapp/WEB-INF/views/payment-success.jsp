@@ -64,8 +64,6 @@
     </div>
 
     <div class="success-info-grid">
-        <div class="success-info-card">
-        </div>
 
         <div class="success-info-card">
             <small>Method</small>

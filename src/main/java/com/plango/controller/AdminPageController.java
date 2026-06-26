@@ -15,11 +15,11 @@ import java.util.List;
 @Controller
 public class AdminPageController {
 
-    private final DestinationRepository destinationRepository;
+    private final DestinationRepository destinationRepository; /* contoh alur: akses dest repo*/
     private final BookingService bookingService;
     private final EmergencyReportRepository emergencyReportRepository;
 
-    public AdminPageController(
+    public AdminPageController( /*repo dimasukkan lewat constructor */
             DestinationRepository destinationRepository,
             BookingService bookingService,
             EmergencyReportRepository emergencyReportRepository
@@ -29,12 +29,12 @@ public class AdminPageController {
         this.emergencyReportRepository = emergencyReportRepository;
     }
 
-    @GetMapping("/admin/dashboard")
+    @GetMapping("/admin/dashboard") 
     public String dashboard(HttpSession session, Model model) {
         String guard = requireAdmin(session);
         if (guard != null) return guard;
 
-        model.addAttribute("destinations", destinationRepository.findAll());
+        model.addAttribute("destinations", destinationRepository.findAll()); /*memanggil repository */
 
         return "admin-dashboard";
     }
@@ -121,7 +121,7 @@ public class AdminPageController {
         String guard = requireAdmin(session);
         if (guard != null) return guard;
 
-        model.addAttribute("bookings", bookingService.findAll());
+        model.addAttribute("bookings", bookingService.findAll()); /* memanggil service */
 
         return "admin-booking";
     }
@@ -135,7 +135,7 @@ public class AdminPageController {
         String guard = requireAdmin(session);
         if (guard != null) return guard;
 
-        bookingService.updateStatus(id, status);
+        bookingService.updateStatus(id, status); 
 
         return "redirect:/admin/booking";
     }
@@ -145,7 +145,7 @@ public class AdminPageController {
         String guard = requireAdmin(session);
         if (guard != null) return guard;
 
-        List<EmergencyReport> emergencyReports = emergencyReportRepository.findAll();
+        List<EmergencyReport> emergencyReports = emergencyReportRepository.findAll(); /*repo */
 
         long urgentCount = emergencyReports.stream()
                 .filter(report -> "PENDING".equalsIgnoreCase(String.valueOf(report.getStatus())))

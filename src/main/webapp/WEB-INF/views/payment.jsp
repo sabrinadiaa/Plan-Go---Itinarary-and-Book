@@ -46,7 +46,6 @@
             </h2>
 
             <p>
-                📍
                 <c:choose>
                     <c:when test="${not empty booking.snapshotLocation}">
                         ${booking.snapshotLocation}

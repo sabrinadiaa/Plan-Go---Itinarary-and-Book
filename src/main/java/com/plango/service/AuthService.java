@@ -16,7 +16,7 @@ public class AuthService {
         this.userRepository = userRepository;
     }
 
-    public LoginResponse login(LoginRequest request) {
+    public LoginResponse login(LoginRequest request) { /*exception */
         User user = userRepository.findByEmail(request.getEmail()).orElse(null);
 
         if (user == null) {

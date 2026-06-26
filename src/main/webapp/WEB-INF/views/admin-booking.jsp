@@ -17,8 +17,6 @@
         <section class="hero">
             <div>
                 <p class="brand">BOOKING MANAGEMENT</p>
-                <h1>All Bookings</h1>
-                <p class="subtitle">Admin bisa melihat booking customer dan mengubah status booking.</p>
             </div>
         </section>
 
@@ -68,11 +66,11 @@
     </main>
 
     <nav class="bottom-nav admin-nav">
-    <a class="nav-item active" href="/admin/dashboard">
+    <a class="nav-item" href="/admin/dashboard">
         <i class="fa-solid fa-house"></i><br>Home
     </a>
 
-    <a class="nav-item" href="/admin/booking">
+    <a class="nav-item active" href="/admin/booking">
         <i class="fa-solid fa-clipboard-list"></i><br>Booking
     </a>
 
